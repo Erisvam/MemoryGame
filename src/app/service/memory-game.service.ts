@@ -8,6 +8,9 @@ import { Stars } from '../interface/stars.model';
 })
 export class MemoryGameService {
 
+  moves: number = 0;
+  position: number = 0;
+  arrStars: Stars[] = [new Stars(true), new Stars(true), new Stars(true)];
   options: Options = {
     verify: [],
     correct: [],
@@ -19,20 +22,18 @@ export class MemoryGameService {
     secoundTitleSelection: '',
   };
 
-  arrStars: Stars[] = [new Stars(true), new Stars(true), new Stars(true)];
-
   changeMoves: EventEmitter<number> = new EventEmitter<number>();
   winEventEmmiter: EventEmitter<string> = new EventEmitter<string>();
   amountStars: EventEmitter<Array<Stars>> = new EventEmitter<Array<Stars>>();
-  moves: number = 0;
+  playAgainVariable: EventEmitter<boolean> = new EventEmitter<boolean>();
 
 
   constructor() {}
 
-  loseStar(moves: number, stars: Stars[]): void {
-    debugger
-    if (moves <= stars.length) {
-      stars[moves - 1].full = false;
+  loseStar(position: number, stars: Stars[]): void {
+    if (position < stars.length) {
+      stars[position].full = false;
+      this.position++;
       this.amountStars.emit(stars);
     }
   }
@@ -81,7 +82,7 @@ export class MemoryGameService {
           this.options.firstTitleSelection = '';
           this.options.secoundTitleSelection = '';
           this.options.verify = [];
-          this.loseStar(this.moves, attempts);
+          this.loseStar(this.position, attempts);
           this.winEventEmmiter.emit('lose');
         }, 500);
       }

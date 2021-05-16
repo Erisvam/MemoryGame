@@ -1,5 +1,6 @@
+import { Stars } from './../../interface/stars.model';
 import { MemoryGameService } from './../../service/memory-game.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-win',
@@ -9,12 +10,16 @@ import { Component, OnInit } from '@angular/core';
 export class WinComponent implements OnInit {
 
 
-  constructor(
-    private memoryGameService:MemoryGameService
-  ) { }
+  @Input() totalMoves: number = 0;
+  @Input() totalStars: Stars[] = null;
+
+  constructor() { }
 
   ngOnInit(): void {
+  }
 
+  playAgain(){
+    window.location.reload();
   }
 
 }

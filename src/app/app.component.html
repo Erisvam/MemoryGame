@@ -1,13 +1,15 @@
-<app-header></app-header>
-<app-board></app-board>
+<div class="div-container">
 
-<!-- <div *ngIf="gameInProcess; else gameOver">
-</div> -->
-<!--
-<ng-template #gameOver>
-  <app-win class="win"></app-win>
-</ng-template> -->
+  <app-header></app-header>
+  <div *ngIf="gameInProcess; else gameOver">
+    <app-board></app-board>
+  </div>
 
-<!-- <app-footer></app-footer> -->
+  <ng-template #gameOver>
+    <app-win class="win" [totalMoves]="totalMoves" [totalStars]="totalStars"></app-win>
+  </ng-template>
+
+  <app-footer class="app-footer"></app-footer>
+</div>
 
 <!-- <router-outlet></router-outlet> -->

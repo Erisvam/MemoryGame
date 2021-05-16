@@ -26,4 +26,8 @@ export class HeaderComponent implements OnInit {
     menuSection.classList.toggle("on", this.show);
     this.show = !this.show
   }
+
+  playAgain(){
+    window.location.reload();
+  }
 }

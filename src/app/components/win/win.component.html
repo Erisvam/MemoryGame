@@ -1,8 +1,21 @@
 <div class="notification is-success" >
   <div class="row">
-    <h1>PARABÉNS VOCÊ GANHOUU !! <span>:D</span></h1>
+    <h1>CONGRATULATION, YOU WON !! <span>:D</span></h1>
   </div>
   <div class="row">
-
+    <div class="stars">
+      <label *ngFor="let stars of totalStars">
+        <img [src]="stars.showStar()" >
+      </label>
+    </div>
+    <div class="moves">
+      <label>Total movements: {{ totalMoves }}</label>
+    </div>
+    <div class="return">
+      <label (click)="playAgain()">
+        Play again:
+        <img src="./../../../assets/img/return.svg" />
+      </label>
+    </div>
   </div>
 </div>

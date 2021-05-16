@@ -18,11 +18,28 @@ export class BoardComponent implements OnInit {
   ngOnInit(): void {
     this.arrIcons = this.memoryGameService.getSort();
     this.attempts = this.memoryGameService.arrStars;
+
+
+    setTimeout(()=>{
+      this.showCard2secounds()
+    },100);
   }
 
   flipCard(id: string, title: string) {
     let card = document.getElementById(id);
     card.classList.toggle('is-flipped');
     this.memoryGameService.verifyMovement(id, title, card, this.attempts);
+  }
+
+  showCard2secounds(){
+    this.arrIcons.forEach(item => {
+      let card = document.getElementById(`${item.id}`);
+      card.classList.add("is-flipped")
+      setTimeout(()=>{
+        card.classList.remove("is-flipped");
+      },1000);
+    })
+
+
   }
 }

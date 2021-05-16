@@ -16,12 +16,11 @@
             <img [src]="star.showStar()" />
           </span>
         </div>
-        <div class="col">
-          <p>12:33</p>
-        </div>
         <div class="col">{{ moves }} Moves</div>
         <div class="col return">
-          <span><img src="./../../../assets/img/return.svg" /></span>
+          <span (click)="playAgain()">
+          <img src="./../../../assets/img/return.svg"/>
+        </span>
         </div>
       </div>
 
