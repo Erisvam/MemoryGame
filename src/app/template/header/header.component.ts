@@ -22,10 +22,8 @@ export class HeaderComponent implements OnInit {
 
   menuToggle(){
     let menuSection = document.querySelector(".menu-section");
-
     document.body.style.overflow = this.show ? "hidden" : "initial";
     menuSection.classList.toggle("on", this.show);
     this.show = !this.show
-
   }
 }

@@ -3,13 +3,14 @@
     <h1 class="is-size-1">Memory Game</h1>
 
     <div class="menu-section">
+
       <div class="menu-toggle" (click)="menuToggle()">
         <div class="one"></div>
         <div class="two"></div>
         <div class="three"></div>
       </div>
 
-      <div class="row">
+      <div class="row container">
         <div class="col stars">
           <span *ngFor="let star of arrStars">
             <img [src]="star.showStar()" />
@@ -23,6 +24,8 @@
           <span><img src="./../../../assets/img/return.svg" /></span>
         </div>
       </div>
+
     </div>
+
   </div>
 </div>
