@@ -1,5 +1,6 @@
 .footer {
-  background: tomato;
+  background: #445760;
+  color: white;
   margin-top: 2rem;
   display: flex;
   padding: 0;
@@ -9,4 +10,13 @@
   align-items: center;
   position: fixed;
   bottom: 0;
+
+  strong{
+    color: white;
+  }
+}
+@media screen and (max-width: 680px) and (min-width: 320px){
+  .footer{
+    position: initial;
+  }
 }
