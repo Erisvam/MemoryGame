@@ -1,0 +1,12 @@
+<div class="row content">
+   <div class="row">
+   <div class="container-card">
+      <div class="card" *ngFor="let icon of arrIcons" [id]="icon.id">
+        <div class="card__face card-front" (click)="flipCard($event.target.parentElement.id, icon.title)"></div>
+        <div class="card__face card-back">
+          <img src="{{ icon.url }}"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
