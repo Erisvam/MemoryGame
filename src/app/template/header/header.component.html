@@ -1,22 +1,28 @@
-<div class="row header-conteiner on">
-
+<div class="row header-conteiner">
   <div class="row">
     <h1 class="is-size-1">Memory Game</h1>
-  </div>
 
+    <div class="menu-section">
+      <div class="menu-toggle" (click)="menuToggle()">
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+      </div>
 
-  <div class="row">
-    <div class="col stars">
-      <span *ngFor="let star of arrStars">
-        <img [src]="star.showStar()"/>
-      </span>
-    </div>
-    <div class="col">
-      <p>12:33</p>
-    </div>
-    <div class="col">{{moves}} Moves</div>
-    <div class="col return">
-      <span><img src="./../../../assets/img/return.svg"/></span>
+      <div class="row">
+        <div class="col stars">
+          <span *ngFor="let star of arrStars">
+            <img [src]="star.showStar()" />
+          </span>
+        </div>
+        <div class="col">
+          <p>12:33</p>
+        </div>
+        <div class="col">{{ moves }} Moves</div>
+        <div class="col return">
+          <span><img src="./../../../assets/img/return.svg" /></span>
+        </div>
+      </div>
     </div>
   </div>
 </div>
